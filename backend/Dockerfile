@@ -24,7 +24,7 @@ COPY src ./src
 
 # Build TypeScript
 # Remove tests that break the build on newer Zod
-RUN rm -rf src/__tests__ && npx tsc
+RUN find ./src -type d -name "__tests__" -exec rm -rf {} + && npx tsc
 
 # Production stage
 FROM node:20-alpine
