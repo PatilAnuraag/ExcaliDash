@@ -60,6 +60,7 @@ RUN mkdir -p /app/uploads /app/prisma
 
 # Copy and set permissions for entrypoint script
 COPY docker-entrypoint.sh ./
+COPY start.sh ./
 RUN chmod +x docker-entrypoint.sh start.sh
 
 # REMOVED: USER nodejs (We must stay root to fix permissions in entrypoint)
